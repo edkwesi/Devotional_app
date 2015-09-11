@@ -8,13 +8,6 @@
 			adb::adb();
 		}
 
-		/*
-		function add_devotional($title, $date, $verse, $bible_reading, $devotional_read, $prayer)
-		{
-
-		}
-		*/
-
 		function get_devotions()
 		{
 			$query = "SELECT title, date, verse, bible_reading, devotional_reading,
@@ -44,12 +37,13 @@
 		}
 
 
-		function get_nextweek()
+		function get_week()
 		{
-			$query = "SELECT title, date, verse, bible_reading, devotional_reading,
-			prayer from devotion wehre date = SUBDATE(CURDATE(),INTERVAL 7 DAYS)";
+			$query = "SELECT title, date, verse, bible_reading, devotional_reading, 
+			prayer from devotion where WEEKOFYEAR(date)=WEEKOFYEAR(NOW())";
 			return $this -> query($query);
 		}
+
 		/*
 		function add_to_bookmark($title)
 		{

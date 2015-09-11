@@ -65,7 +65,7 @@
 		include("devotional.php");
 		$did=get_datan("did");
 		$var=new Devotional();
-		$var->get_nextweek()();
+		$var->get_week();
 		$row=$var->fetch();
 		if(!$row)
 		{
