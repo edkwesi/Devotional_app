@@ -15,6 +15,8 @@
 		case 4:
 			get_two_days();
 			break;
+		case 5:
+			get_nextweek_devotions();
 		default:
 			echo"{";
 			echo jsonn("result",0). ",";
@@ -57,6 +59,43 @@
 		}
 		return;
 	}
+
+	function get_nextweek_devotions()
+	{
+		include("devotional.php");
+		$did=get_datan("did");
+		$var=new Devotional();
+		$var->get_nextweek()();
+		$row=$var->fetch();
+		if(!$row)
+		{
+			echo "{";
+			echo jsonn("result",0).",";
+			echo jsons("message","devotional not found");
+			echo "}";
+			return;
+		}
+
+		while($row)
+		{
+			echo "{";
+				echo jsonn("result",1).",";
+				echo '"devotion":{';
+					echo jsonn("did",$did).",";
+					echo jsons("title",$row['title']).",";
+					echo jsons("date",$row['date']).",";
+					echo jsons("verse",$row['verse']).",";
+					echo jsons("bible_reading",$row['bible_reading']).",";
+					echo jsons("devotional_reading",$row['devotional_reading']).",";
+					echo jsons("prayer",$row['prayer']);
+				echo "}";
+			echo "}";
+
+			$row=$var ->fetch();
+		}
+		return;
+	}
+
 
 	function get_today()
 	{

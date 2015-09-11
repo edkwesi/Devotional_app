@@ -42,6 +42,14 @@
 			prayer from devotion where date  = SUBDATE(CURDATE(),2)";
 			return $this -> query($query);
 		}
+
+
+		function get_nextweek()
+		{
+			$query = "SELECT title, date, verse, bible_reading, devotional_reading,
+			prayer from devotion wehre date = SUBDATE(CURDATE(),INTERVAL 7 DAYS)";
+			return $this -> query($query);
+		}
 		/*
 		function add_to_bookmark($title)
 		{
