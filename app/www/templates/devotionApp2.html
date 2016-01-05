@@ -1,13 +1,21 @@
-<ion-view title="Devotion App">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
+<ion-view title="Devotion App" class="hasheader">
+   <!-- <ion-content overflow-scroll="true" padding="true" class="has-header">
         <div class="list card">
             <div class="item item-divider">Date</div>
             <div class="item item-body">
                 <div>
-                    <p>Blah blah blah lorem ipsum blah</p>
+                    <p></p>
                 </div>
             </div>
             <div class="item item-divider">Mensa Otabil</div>
         </div>
-    </ion-content>
+    </ion-content>-->
+    <ion-content>
+          <ion-list ng-controller="devotionApp2Ctrl">
+            <ion-item ng-repeat="devotion in devotions" class = "devListing">
+              <a ui-sref="singleDevotion({id:devotion.$id})" nav-direction="enter" ><h2>{{devotion.datee}}</h2> </a>  
+            </ion-item>
+          </ion-list>
+        </ion-content>
+
 </ion-view>

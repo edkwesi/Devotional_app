@@ -8,8 +8,8 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('devotionApp2Ctrl', function($scope) {
-
+.controller('devotionApp2Ctrl', function($scope,devotionService) {
+	$scope.devotions= devotionService.all;
 })
    
 .controller('podcastsCtrl', function($scope) {

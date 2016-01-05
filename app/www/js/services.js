@@ -1,10 +1,20 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
+.factory('devotionService', function($firebaseArray){
 
-}])
+	var dev = new Firebase("devotionapp.firebaseIO.com ");
 
-.service('BlankService', [function(){
+	var devs = $firebaseArray(dev);
 
-}]);
+	var devotionService={
 
+		all:devs,
+		get: function(devId){
+
+			return devs.$getRecord(devId)
+		}
+
+	};
+	return devotionService;
+
+});
