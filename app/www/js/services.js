@@ -2,7 +2,7 @@ angular.module('app.services', [])
 
 .factory('devotionService', function($firebaseArray){
 
-	var dev = new Firebase("devotionapp.firebaseIO.com ");
+	var dev = new Firebase("devotionapp.firebaseIO.com");
 
 	var devs = $firebaseArray(dev);
 

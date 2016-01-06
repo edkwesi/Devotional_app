@@ -1,0 +1,23 @@
+<ion-view title="Devotion App" class="hasheader">
+    
+    <!--Displays devotion listings via date"-->
+
+    <ion-content>
+          <ion-list ng-controller="devotionListCtrl">
+            <ion-item ng-repeat="devotion in devotions" class = "devListing">
+              <a ui-sref="singleDevotion({id:devotion.$id})" nav-direction="enter" ><h2>{{devotion.datee}}</h2> </a>  
+            </ion-item>
+          </ion-list>
+        </ion-content>
+<!--
+        <ion-view view-title="Choose Recipe">
+        <ion-content>
+          <ion-list ng-controller="listController">
+            <ion-item ng-repeat="recipe in recipes" class = "recListing">
+              <a ui-sref="singleRecipe({id:recipe.$id})" nav-direction="enter" ><h2>{{recipe.recipeName}}</h2> </a>  
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>-->
+
+</ion-view>

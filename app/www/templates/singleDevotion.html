@@ -1,0 +1,33 @@
+
+      <ion-view view-title="Devotion App" >
+        <ion-content>
+
+         <!-- <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <div class="list card">
+            <div class="item item-divider">Date</div>
+            <div class="item item-body">
+                <div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="item item-divider">Mensa Otabil</div>
+        </div>
+    </ion-content>-->
+          <div ng-controller="singleDevCtrl">
+          <h4>{{singleDevotion.recipeName}}</h4>
+          <h4>Ingredients:</h4>
+          <ion-list type="inset-list">
+            <ion-item ng-repeat="ing in ingList">
+              {{ing}}
+            </ion-item>
+          </ion-list>
+          <h4>Directions:</h4>
+          <ion-list type="inset-list">
+            <ion-item ng-repeat="prep in prepList">
+              {{prep}}
+            </ion-item>
+          </ion-list>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>

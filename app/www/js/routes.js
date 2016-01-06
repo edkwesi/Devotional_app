@@ -30,12 +30,24 @@ angular.module('app.routes', [])
     
       
         
-    .state('devotionApp.devotionApp2', {
+    .state('devotionApp.devotionList', {
       url: '/home',
       views: {
         'tab1': {
-          templateUrl: 'templates/devotionApp2.html',
-          controller: 'devotionApp2Ctrl'
+          templateUrl: 'templates/devotionList.html',
+          controller: 'devotionListCtrl'
+        }
+      }
+    })
+
+
+
+    .state('devotionApp.singleDevotion', {
+      url: '/home',
+      views: {
+        'tab1': {
+          templateUrl: 'templates/singleDevotion.html',
+          controller: 'singleDevCtrl'
         }
       }
     })
