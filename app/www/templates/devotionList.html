@@ -4,8 +4,9 @@
 
     <ion-content>
           <ion-list ng-controller="devotionListCtrl">
-            <ion-item ng-repeat="devotion in devotions" class = "devListing">
-              <a ui-sref="singleDevotion({id:devotion.$id})" nav-direction="enter" ><h2>{{devotion.datee}}</h2> </a>  
+            <ion-item  ng-repeat="devotion in devotions" class = "devListing">
+            <a ui-sref="devotionApp.singleDevotion({id:devotion.$id})" nav-direction="enter" > <h2>{{devotion.datee}}</h2>  </a>  
+
             </ion-item>
           </ion-list>
         </ion-content>
