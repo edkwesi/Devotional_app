@@ -11,7 +11,7 @@ angular.module('app.services', [])
 		all:devs,
 		get: function(devId){
 
-			return devs.$getRecord(devId)
+			return devs.$getRecord(devId);
 		}
 
 	};
