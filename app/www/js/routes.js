@@ -43,7 +43,7 @@ angular.module('app.routes', [])
 
 
     .state('devotionApp.singleDevotion', {
-      url: '/home',
+      url: '/Dev/:id',
       views: {
         'tab1': {
           templateUrl: 'templates/singleDevotion.html',
