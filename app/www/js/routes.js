@@ -31,7 +31,7 @@ angular.module('app.routes', [])
       
         
     .state('devotionApp.devotionList', {
-      url: '/home',
+      url: '/list',
       views: {
         'tab1': {
           templateUrl: 'templates/devotionList.html',
